@@ -1,0 +1,432 @@
+/* ---------- Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    background-image: radial-gradient(circle at 85% 15%, rgba(18, 84, 240, 0.10), transparent 40%),
+                      radial-gradient(circle at 10% 80%, rgba(18, 84, 240, 0.07), transparent 40%);
+    background-attachment: fixed;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Top bar ---------- */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    display: flex;
+    height: 500px;
+    position: relative;
+}
+
+.left,
+.right {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left  { background-color: rgb(18, 84, 240); }
+.right { background-color: black; }
+
+.left img {
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
+    filter: drop-shadow(0 35px 25px rgba(0, 0, 0, 0.45));
+    animation: hover 4.5s ease-in-out infinite;
+}
+
+.right img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    width: 88%;
+    height: 88%;
+    object-fit: contain;
+    filter: drop-shadow(0 35px 25px rgba(0, 0, 0, 0.45));
+    animation: hover 4.5s ease-in-out infinite;
+}
+
+@keyframes hover {
+    50% { transform: translateY(-16px) rotate(-2deg); }
+}
+
+.hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150px;
+    color: white;
+    transition: 0.4s ease;
+    z-index: 2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.seven{
+    font-size: 150px;
+    font-weight: 900;
+    background: linear-gradient(90deg, #ffffff, #0a0a0a, #ffffff,#0a45e7, #ffffff );
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 5s linear infinite;
+}
+@keyframes gradientMove{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 300%;
+    }
+}
+/* ---------- Tag cards on the hero ---------- */
+.card {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    z-index: 2;
+}
+
+.card span {
+    font-size: 12px;
+}
+
+.card span:last-child {
+    width: 100%;
+    font-size: 16px;
+}
+
+.card1 { top: 20px;    right: 20px; }
+.card2 { bottom: 20px; left: 20px; }
+
+/* ---------- Product grid ---------- */
+.products { padding: 40px 20px 20px; }
+
+.products-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.products-head h2 { font-size: 20px; }
+.products-head a { color: black; font-size: 13px; text-decoration: none; }
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.product img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.pinfo {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 14px;
+    font-size: 14px;
+}
+
+.pinfo b { font-weight: bold; }
+
+/* ---------- Banners ---------- */
+.banner {
+    display: flex;
+    align-items: stretch;
+    height: 360px;
+    color: white;
+    overflow: hidden;
+}
+
+.banner h2 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-family: Impact, "Arial Black", sans-serif;
+    font-size: clamp(55px, 9vw, 115px);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    color: #f5f5eb;
+
+    text-shadow: 4px 5px 0 rgba(0,0,0,0.15);
+
+    transition: color 0.4s ease,
+                text-shadow 0.4s ease,
+                transform 0.4s ease;
+
+    animation: slideUp 1s ease-out both;
+}
+.banner h2:hover {
+
+}
+    
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.banner img { width: 50%; height: 100%; object-fit: cover; }
+
+.banner-blue  { background-color: rgb(18, 84, 240); margin-top: 40px; }
+.banner-black { background-color: black; }
+.banner-black h2 { justify-content: flex-end; text-align: right; }
+
+/* ---------- Footer ---------- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 11px;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 700px) {
+    .hero { height: 380px; }
+    .hero h1 { font-size: 80px; }
+
+    .product-list { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .pinfo { flex-direction: column; gap: 2px; padding: 10px; }
+    .banner h2 { font-size: 40px; }
+
+    .banner { height: 240px; }
+    .banner h2 { font-size: 42px; }
+}
+
+/* ---------- Clickable shoes ---------- */
+[data-shoe] { cursor: pointer; }
+[data-shoe]:focus-visible { outline: 3px solid rgb(18, 84, 240); outline-offset: -3px; }
+
+.product img { transition: transform 0.3s ease; }
+.product:hover img { transform: translateY(-8px) scale(1.05); }
+
+/* ---------- Pop-up ---------- */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.modal.open { visibility: visible; opacity: 1; }
+
+.modal-box {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    width: min(920px, 100%);
+    max-height: 100%;
+    overflow: auto;
+    background: white;
+    padding: 30px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    border: none;
+    background: none;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* 3D stage: "perspective" gives depth, rotateX/rotateY tilt the shoe */
+.stage {
+    flex: 1.2;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 900px;
+    touch-action: pan-y;
+}
+
+.stage img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 40px 50px -20px rgba(0, 0, 0, 0.5);
+    transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: transform 0.15s ease-out;
+    will-change: transform;
+}
+
+.details {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* details slide in one after another once the shoe lands */
+.modal.open .details > * {
+    animation: rise 0.5s ease both;
+    animation-delay: calc(0.45s + var(--i, 0) * 0.07s);
+}
+.details > :nth-child(1) { --i: 0; }
+.details > :nth-child(2) { --i: 1; }
+.details > :nth-child(3) { --i: 2; }
+.details > :nth-child(4) { --i: 3; }
+.details > :nth-child(5) { --i: 4; }
+.details > :nth-child(6) { --i: 5; }
+.details > :nth-child(7) { --i: 6; }
+.details > :nth-child(8) { --i: 7; }
+
+@keyframes rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: none; }
+}
+
+.m-cat   { font-size: 13px; color: #666; }
+.details h3 { font-size: 34px; }
+.m-price { font-size: 22px; font-weight: bold; color: rgb(18, 84, 240); }
+.m-desc  { font-size: 14px; line-height: 1.5; max-width: 52ch; }
+.m-features { list-style: none; display: grid; gap: 6px; font-size: 14px; }
+.m-features li::before { content: "+ "; color: rgb(18, 84, 240); font-weight: bold; }
+
+.sizes { display: flex; gap: 8px; flex-wrap: wrap; }
+.sizes button {
+    width: 44px;
+    height: 44px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+.sizes button.selected { background: black; color: white; border-color: black; }
+
+.add {
+    padding: 14px;
+    border: none;
+    background: rgb(18, 84, 240);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+.add:hover { background: black; }
+.m-msg { min-height: 18px; font-size: 13px; color: #b00020; }
+
+@media (max-width: 700px) {
+    .modal-box { flex-direction: column; padding: 20px; gap: 20px; }
+    .stage img { max-height: 260px; }
+    .details h3 { font-size: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .modal, .stage img, .product img { transition: none; }
+    .modal.open .details > * { animation: none; }
+}
+
+/* ---------- 3D floating cubes in the background ---------- */
+.scene {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+    perspective: 900px;
+}
+
+.scene-inner {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transform: translateY(var(--sy, 0px)) rotateX(var(--my, 0deg)) rotateY(var(--mx, 0deg));
+    transition: transform 0.25s ease-out;
+}
+
+.bob {
+    position: absolute;
+    animation: bob var(--bd, 7s) ease-in-out infinite alternate;
+}
+
+.cube {
+    position: relative;
+    width: var(--s);
+    height: var(--s);
+    transform-style: preserve-3d;
+    animation: spin var(--d, 20s) linear infinite;
+}
+
+cube i {
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid rgba(18, 84, 240, 0.5);
+    background: rgba(18, 84, 240, 0.05);
+}
+.cube.dark i { border-color: rgba(0, 0, 0, 0.45); background: rgba(0, 0, 0, 0.04); }
+
+.cube i:nth-child(1) { transform: translateZ(calc(var(--s) / 2)); }
+.cube i:nth-child(2) { transform: rotateY(180deg) translateZ(calc(var(--s) / 2)); }
+.cube i:nth-child(3) { transform: rotateY(90deg) translateZ(calc(var(--s) / 2)); }
+.cube i:nth-child(4) { transform: rotateY(-90deg) translateZ(calc(var(--s) / 2)); }
+.cube i:nth-child(5) { transform: rotateX(90deg) translateZ(calc(var(--s) / 2)); }
+.cube i:nth-child(6) { transform: rotateX(-90deg) translateZ(calc(var(--s) / 2)); }
+
+@keyframes spin { to { transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg); } }
+@keyframes bob  { to { transform: translateY(-40px); } }
+
+@media (prefers-reduced-motion: reduce) {
+    .bob, .cube, .left img { animation: none; }
+}
+

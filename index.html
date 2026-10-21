@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7S Sneakers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 3D floating cubes in the background (built by script.js) -->
+    <div class="scene" aria-hidden="true"><div class="scene-inner" id="scene"></div></div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#products">Shop All</a></li>
+                <li><a href="#">7S Sneakers</a></li>
+                <li><a href="#" id="cart">Cart(0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero: blue half + black half -->
+    <section class="hero">
+        <div class="left" data-shoe="s05" tabindex="0" role="button" aria-label="View Jordan 1 Court Purple details">
+            <img src="images/jordan-cut.png" alt="Jordan 1 Court Purple">
+        </div>
+        <div class="right" data-shoe="s17" tabindex="0" role="button" aria-label="View Nike SB Dunk Denim details">
+            <img src="images/s17.jpg" alt="Nike SB Dunk Denim">
+        </div>
+
+        <h1 class="seven">SEVEN</h1>
+
+        <div class="card card1"><span>Limited</span><span>Edition</span><span>Nike SB Dunk Denim</span></div>
+        <div class="card card2"><span>Limited</span><span>Edition</span><span>Jordan 1 Court Purple</span></div>
+    </section>
+
+    <!-- Product grid (cards are built by script.js from the shoe list) -->
+    <div class="products" id="products">
+        <div class="products-head">
+            <h2>SNEAKERS</h2>
+            <a href="#products">17 styles</a>
+        </div>
+        <div class="product-list" id="product-list"></div>
+    </div>
+
+    <section class="banner banner-blue">
+        <h2>RUN IN STYLE</h2>
+        <img src="images/s06.jpg" alt="Prada Terra">
+    </section>
+
+    <section class="banner banner-black">
+        <img src="images/s07.jpg" alt="Balenciaga Airwave">
+        <h2>ON THE GO</h2>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 7S Sneakers</p>
+        <p>Shipping &amp; Returns</p>
+    </footer>
+
+    <!-- Shoe pop-up -->
+    <div class="modal" id="modal" aria-hidden="true">
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="m-name">
+            <button class="modal-close" id="m-close" aria-label="Close">&times;</button>
+            <div class="stage" id="stage"><img id="m-img" alt=""></div>
+            <div class="details">
+                <p class="m-cat" id="m-cat"></p>
+                <h3 id="m-name"></h3>
+                <p class="m-price" id="m-price"></p>
+                <p class="m-desc" id="m-desc"></p>
+                <ul class="m-features" id="m-features"></ul>
+                <div class="sizes" id="m-sizes"></div>
+                <button class="add" id="m-add">Add to cart</button>
+                <p class="m-msg" id="m-msg"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
